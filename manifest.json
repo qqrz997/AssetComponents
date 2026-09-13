@@ -1,0 +1,12 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/bsmg/BSIPA-MetadataFileSchema/master/Schema.json",
+  "id": "SaberComponents",
+  "name": "SaberComponents",
+  "author": "qqrz997",
+  "version": "1.0.0",
+  "description": "Component library for custom sabers",
+  "gameVersion": "1.44.2",
+  "files": [
+    "Libs/SaberComponents.dll"
+  ]
+}
