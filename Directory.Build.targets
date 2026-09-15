@@ -27,14 +27,14 @@
         </ItemGroup>
         
         <MakeDir Directories=" 
-            $(BeatSaberDir)\Libs;
-            $(BeatSaberDir)\Plugins" />
+            $(BeatSaberDir)\IPA\Pending\Libs;
+            $(BeatSaberDir)\IPA\Pending\Plugins" />
         
-        <Copy SourceFiles="@(TempLibsFiles);" DestinationFiles="@(TempLibsFiles->'$(BeatSaberDir)\Libs\%(Filename)%(Extension)')" />
+        <Copy SourceFiles="@(TempLibsFiles);" DestinationFiles="@(TempLibsFiles->'$(BeatSaberDir)\IPA\Pending\Libs\%(Filename)%(Extension)')" />
         <Copy SourceFiles="@(TempLibsFiles);" DestinationFiles="@(TempLibsFiles->'$(UnityProjDir)\Assets\Assemblies\%(Filename)%(Extension)')" />
         
         <Copy SourceFiles="@(TempPluginsFiles)" DestinationFiles="
-            @(TempPluginsFiles->'$(BeatSaberDir)\Plugins\%(Filename)%(Extension)')" />
+            @(TempPluginsFiles->'$(BeatSaberDir)\IPA\Pending\Plugins\%(Filename)%(Extension)')" />
         
         <RemoveDir Directories="$(ZipTempDir)" />
     </Target>
