@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project>
-  <PropertyGroup>
-    <!-- Change this path if necessary. Make sure it ends with a backslash. -->
-    <BeatSaberDir>H:/SteamLibrary/steamapps/common/Beat Saber Manager/BSManager/BSInstances/1.44.2</BeatSaberDir>
-    <UnityProjDir>H:\Source\UnityProjects\SaberToolkit-main</UnityProjDir>
-  </PropertyGroup>
-</Project>
