@@ -18,7 +18,7 @@ namespace SaberComponents.Components
         
         [Space]
         [Tooltip("Which color from a color scheme the trail should use")]
-        public ColorType colorType;
+        public ColorSchemeType colorSchemeType;
         [Tooltip("When Color Type is set to an environment color, toggle between normal and boost colors on boost event")]
         public bool useColorBoostEvents;
 

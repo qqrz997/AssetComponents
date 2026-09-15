@@ -1,6 +1,6 @@
 ﻿namespace SaberComponents.Models
 {
-    public enum ColorType
+    public enum ColorSchemeType
     {
         LeftSaber,
         RightSaber,

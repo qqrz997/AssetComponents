@@ -15,7 +15,7 @@ namespace SaberComponents.Components
         [Space]
         public string propertyName;
         [Tooltip("Which color from a color scheme should be given")]
-        public ColorType colorType;
+        public ColorSchemeType colorSchemeType;
         [Tooltip("The color given to the property is always multiplied by the multiplier color; white has no effect")]
         public Color multiplierColor;
         
