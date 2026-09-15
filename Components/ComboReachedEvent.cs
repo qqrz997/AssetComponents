@@ -3,20 +3,24 @@ using UnityEngine.Events;
 
 namespace SaberComponents.Components
 {
-    [AddComponentMenu("Beat Saber/Saber Components/ComboReachedEvent")]
-    public class ComboReachedEvent : EventFilterBehaviour
+    [AddComponentMenu("Beat Saber/SaberComponents/ComboReachedEvent")]
+    [RequireComponent(typeof(EventManager))]
+    public class ComboReachedEvent : MonoBehaviour
     {
         public int comboTarget = 50;
         public UnityEvent nthComboReached;
 
+        private EventManager eventManager;
+        
         private void OnEnable()
         {
-            EventManager.OnComboChanged.AddListener(OnComboReached);
+            if (eventManager == null) eventManager = GetComponent<EventManager>();
+            eventManager.OnComboChanged.AddListener(OnComboReached);
         }
 
         private void OnDisable()
         {
-            EventManager.OnComboChanged.RemoveListener(OnComboReached);
+            eventManager.OnComboChanged.RemoveListener(OnComboReached);
         }
 
         private void OnComboReached(int combo)

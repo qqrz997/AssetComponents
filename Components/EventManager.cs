@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 namespace SaberComponents.Components
 {
-    [AddComponentMenu("Beat Saber/Saber Components/EventManager")]
+    [AddComponentMenu("Beat Saber/SaberComponents/EventManager")]
     public class EventManager : MonoBehaviour
     {
         [Serializable]
@@ -23,8 +23,6 @@ namespace SaberComponents.Components
         public UnityEvent OnLevelStart;
         public UnityEvent OnLevelFail;
         public UnityEvent OnLevelEnded;
-        public UnityEvent OnBlueLightOn;
-        public UnityEvent OnRedLightOn;
         public ComboChangedEvent OnComboChanged = new();
         public AccuracyChangedEvent OnAccuracyChanged = new();
     }

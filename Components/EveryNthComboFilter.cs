@@ -3,20 +3,24 @@ using UnityEngine.Events;
 
 namespace SaberComponents.Components
 {
-    [AddComponentMenu("Beat Saber/Saber Components/EveryNthComboFilter")]
-    public class EveryNthComboFilter : EventFilterBehaviour
+    [AddComponentMenu("Beat Saber/SaberComponents/EveryNthComboFilter")]
+    [RequireComponent(typeof(EventManager))]
+    public class EveryNthComboFilter : MonoBehaviour
     {
         public int comboStep = 50;
         public UnityEvent nthComboReached;
 
+        private EventManager eventManager;
+        
         private void OnEnable()
         {
-            EventManager.OnComboChanged.AddListener(OnComboStep);
+            if (eventManager == null) eventManager = GetComponent<EventManager>();
+            eventManager.OnComboChanged.AddListener(OnComboStep);
         }
 
         private void OnDisable()
         {
-            EventManager.OnComboChanged.RemoveListener(OnComboStep);
+            eventManager.OnComboChanged.RemoveListener(OnComboStep);
         }
 
         private void OnComboStep(int combo)

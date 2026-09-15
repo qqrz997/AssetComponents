@@ -3,25 +3,28 @@ using UnityEngine.Events;
 
 namespace SaberComponents.Components
 {
-    [AddComponentMenu("Beat Saber/Saber Components/AccuracyReachedEvent")]
-    public class AccuracyReachedEvent : EventFilterBehaviour
+    [AddComponentMenu("Beat Saber/SaberComponents/AccuracyReachedEvent")]
+    [RequireComponent(typeof(EventManager))]
+    public class AccuracyReachedEvent : MonoBehaviour
     {
         public float target = 1f;
         public UnityEvent onAccuracyReachTarget;
         public UnityEvent onAccuracyHigherThanTarget;
         public UnityEvent onAccuracyLowerThanTarget;
-    
+
+        private EventManager eventManager;
         private float prevAccuracy;
 
         private void OnEnable()
         {
-            EventManager.OnAccuracyChanged.AddListener(OnAccuracyReached);
+            if (eventManager == null) eventManager = GetComponent<EventManager>();
+            eventManager.OnAccuracyChanged.AddListener(OnAccuracyReached);
             prevAccuracy = 1f;
         }
 
         private void OnDisable()
         {
-            EventManager.OnAccuracyChanged.RemoveListener(OnAccuracyReached);
+            eventManager.OnAccuracyChanged.RemoveListener(OnAccuracyReached);
         }
 
         private void OnAccuracyReached(float accuracy)
