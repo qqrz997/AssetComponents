@@ -16,6 +16,8 @@ namespace SaberComponents.Components
         public string propertyName;
         [Tooltip("Which color from a color scheme should be given")]
         public ColorSchemeType colorSchemeType;
+        [Tooltip("When Color Type is set to an environment color, toggle between normal and boost colors on boost event")]
+        public bool useColorBoostEvents;
         [Tooltip("The color given to the property is always multiplied by the multiplier color; white has no effect")]
         public Color multiplierColor;
         
