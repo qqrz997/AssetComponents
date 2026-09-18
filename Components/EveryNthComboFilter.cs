@@ -7,6 +7,7 @@ namespace SaberComponents.Components
     [RequireComponent(typeof(EventManager))]
     public class EveryNthComboFilter : MonoBehaviour
     {
+        [Tooltip("Triggers the event every specified number of combo")]
         public int comboStep = 50;
         public UnityEvent nthComboReached;
 
@@ -15,12 +16,12 @@ namespace SaberComponents.Components
         private void OnEnable()
         {
             if (eventManager == null) eventManager = GetComponent<EventManager>();
-            eventManager.OnComboChanged.AddListener(OnComboStep);
+            eventManager.comboChanged.AddListener(OnComboStep);
         }
 
         private void OnDisable()
         {
-            eventManager.OnComboChanged.RemoveListener(OnComboStep);
+            eventManager.comboChanged.RemoveListener(OnComboStep);
         }
 
         private void OnComboStep(int combo)

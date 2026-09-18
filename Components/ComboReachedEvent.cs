@@ -7,6 +7,7 @@ namespace SaberComponents.Components
     [RequireComponent(typeof(EventManager))]
     public class ComboReachedEvent : MonoBehaviour
     {
+        [Tooltip("The number combo the event should be triggered at")]
         public int comboTarget = 50;
         public UnityEvent nthComboReached;
 
@@ -15,12 +16,12 @@ namespace SaberComponents.Components
         private void OnEnable()
         {
             if (eventManager == null) eventManager = GetComponent<EventManager>();
-            eventManager.OnComboChanged.AddListener(OnComboReached);
+            eventManager.comboChanged.AddListener(OnComboReached);
         }
 
         private void OnDisable()
         {
-            eventManager.OnComboChanged.RemoveListener(OnComboReached);
+            eventManager.comboChanged.RemoveListener(OnComboReached);
         }
 
         private void OnComboReached(int combo)
