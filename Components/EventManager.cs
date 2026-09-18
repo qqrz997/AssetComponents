@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,6 +9,7 @@ namespace SaberComponents.Components
     {
         [Serializable] public class ComboChangedEvent : UnityEvent<int> { }
         [Serializable] public class AccuracyChangedEvent : UnityEvent<float> { }
+        [Serializable] public class BoostColorsToggledEvent : UnityEvent<bool> { }
 
         [Tooltip("Triggered when a note is cut with the correct saber in the correct direction")]
         public UnityEvent noteCut;
@@ -36,9 +36,18 @@ namespace SaberComponents.Components
         public UnityEvent levelStarted;
         
         [Tooltip("Triggered when the last note of the map reaches the player")]
-        public UnityEvent onLevelEnded;
+        public UnityEvent levelEnded;
         
         [Tooltip("Triggered when the player runs out of energy/life")]
         public UnityEvent levelFailed;
+
+        [Tooltip("Triggered when one or more arcs start interacting with the saber")]
+        public UnityEvent arcStartedInteracting;
+        
+        [Tooltip("Triggered when no more arcs are interacting with the saber")]
+        public UnityEvent arcStoppedInteracting;
+
+        [Tooltip("Triggered when environment boost colors toggle on or off")]
+        public BoostColorsToggledEvent boostColorsToggled;
     }
 }
