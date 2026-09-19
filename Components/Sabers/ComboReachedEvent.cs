@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace AssetComponents.Components.Sabers
 {
-    [AddComponentMenu("Beat Saber/AssetComponents/ComboReachedEvent")]
+    [AddComponentMenu("Beat Saber/CustomSabers/Combo Reached Event")]
     [RequireComponent(typeof(EventManager))]
     public class ComboReachedEvent : MonoBehaviour
     {

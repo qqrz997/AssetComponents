@@ -2,7 +2,7 @@
 
 namespace AssetComponents.Components.Sabers
 {
-    [AddComponentMenu("Beat Saber/AssetComponents/SaberDescriptor")]
+    [AddComponentMenu("Beat Saber/CustomSabers/Saber Descriptor")]
     public class SaberDescriptor : MonoBehaviour
     {
         public string saberName = nameof(saberName);

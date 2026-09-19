@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace AssetComponents.Components.Sabers
 {
-    [AddComponentMenu("Beat Saber/AssetComponents/AccuracyReachedEvent")]
+    [AddComponentMenu("Beat Saber/CustomSabers/Accuracy Reached Event")]
     [RequireComponent(typeof(EventManager))]
     public class AccuracyReachedEvent : MonoBehaviour
     {

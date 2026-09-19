@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace AssetComponents.Components.Sabers
 {
-    [AddComponentMenu("Beat Saber/AssetComponents/CustomTrail")]
+    [AddComponentMenu("Beat Saber/CustomSabers/Custom Trail")]
     public class CustomTrail : MonoBehaviour
     {
         public Transform top;

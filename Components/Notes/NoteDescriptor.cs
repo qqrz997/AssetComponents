@@ -2,6 +2,7 @@
 
 namespace AssetComponents.Components.Notes
 {
+    [AddComponentMenu("Beat Saber/CustomNotes/Note Descriptor")]
     public class NoteDescriptor : MonoBehaviour
     {
         public string noteName = nameof(noteName);
