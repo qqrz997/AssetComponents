@@ -2,9 +2,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace SaberComponents.Components
+namespace AssetComponents.Components.Sabers
 {
-    [AddComponentMenu("Beat Saber/SaberComponents/EventManager")]
+    [AddComponentMenu("Beat Saber/AssetComponents/EventManager")]
     public class EventManager : MonoBehaviour
     {
         [Serializable] public class ComboChangedEvent : UnityEvent<int> { }

@@ -1,12 +1,12 @@
 ﻿using System;
-using SaberComponents.Models;
+using AssetComponents.Models;
 using UnityEngine;
 
 #pragma warning disable CS0649
 
-namespace SaberComponents.Components
+namespace AssetComponents.Components
 {
-    [AddComponentMenu("Beat Saber/SaberComponents/MaterialColorer")]
+    [AddComponentMenu("Beat Saber/AssetComponents/MaterialColorer")]
     [RequireComponent(typeof(MeshRenderer))]
     public class MaterialColorer : MonoBehaviour
     {
@@ -21,6 +21,6 @@ namespace SaberComponents.Components
         [Tooltip("The color given to the property is always multiplied by the multiplier color; white has no effect")]
         public Color multiplierColor;
         
-        [HideInInspector] public MaterialPropertyBlock materialPropertyBlock;
+        [HideInInspector] public MaterialPropertyBlock MaterialPropertyBlock;
     }
 }

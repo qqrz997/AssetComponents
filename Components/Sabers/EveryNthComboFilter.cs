@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace SaberComponents.Components
+namespace AssetComponents.Components.Sabers
 {
-    [AddComponentMenu("Beat Saber/SaberComponents/EveryNthComboFilter")]
+    [AddComponentMenu("Beat Saber/AssetComponents/EveryNthComboFilter")]
     [RequireComponent(typeof(EventManager))]
     public class EveryNthComboFilter : MonoBehaviour
     {

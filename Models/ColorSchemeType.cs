@@ -1,4 +1,4 @@
-﻿namespace SaberComponents.Models
+﻿namespace AssetComponents.Models
 {
     public enum ColorSchemeType
     {

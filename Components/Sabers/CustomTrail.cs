@@ -1,9 +1,9 @@
-﻿using SaberComponents.Models;
+﻿using AssetComponents.Models;
 using UnityEngine;
 
-namespace SaberComponents.Components
+namespace AssetComponents.Components.Sabers
 {
-    [AddComponentMenu("Beat Saber/SaberComponents/CustomTrail")]
+    [AddComponentMenu("Beat Saber/AssetComponents/CustomTrail")]
     public class CustomTrail : MonoBehaviour
     {
         public Transform top;
