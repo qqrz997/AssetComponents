@@ -14,7 +14,9 @@ namespace AssetComponents.Components.Notes
         public NoteSet leftNotes;
         [PropertyLabel("Right Notes (Optional)")]
         public NoteSet rightNotes;
-            
+        [PropertyLabel("Bomb (Optional)")]
+        public GameObject bomb;
+        
         [Space]
         public bool disableBaseNoteArrows;
     }
