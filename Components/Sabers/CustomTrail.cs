@@ -17,7 +17,7 @@ namespace AssetComponents.Components.Sabers
         public float length = 0.4f;
         
         [Space] 
-        public bool useTrailColor;
+        [Tooltip("If not using a trail colorer, this color will always be used")]
         public Color trailColor = Color.white;
         [Tooltip("The color given to the trail is always multiplied by the multiplier color; white has no effect")]
         public Color multiplierColor = Color.white;
