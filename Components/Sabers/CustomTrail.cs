@@ -16,12 +16,6 @@ namespace AssetComponents.Components.Sabers
         [Range(0, 1), Tooltip("Duration of the furthest section of the trail in seconds")]
         public float length = 0.4f;
         
-        [Space]
-        [Tooltip("Which color from a color scheme the trail should use")]
-        public ColorSchemeType colorSchemeType;
-        [Tooltip("When Color Type is set to an environment color, toggle between normal and boost colors on boost event")]
-        public bool useColorBoostEvents;
-
         [Space] 
         public bool useTrailColor;
         public Color trailColor = Color.white;
