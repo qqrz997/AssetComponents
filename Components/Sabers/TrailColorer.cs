@@ -1,10 +1,9 @@
-using AssetComponents.Components.Sabers;
 using AssetComponents.Models;
 using UnityEngine;
 
 #pragma warning disable CS0649
 
-namespace AssetComponents.Components
+namespace AssetComponents.Components.Sabers
 {
     [AddComponentMenu("Beat Saber/AssetComponents/TrailColorer")]
     [RequireComponent(typeof(CustomTrail))]
@@ -34,7 +33,7 @@ namespace AssetComponents.Components
         [Tooltip("The color given to the property is always multiplied by the multiplier color; white has no effect")]
         private Color multiplierColor = Color.white;
 
-        public Material[] Materials => customTrail.materials;
+        public Material Material => customTrail.material;
         public MaterialPropertyBlock MaterialPropertyBlock => materialPropertyBlock ??= new();
         
         public string PropertyName => propertyName;

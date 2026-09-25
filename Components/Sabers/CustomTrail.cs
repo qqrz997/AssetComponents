@@ -1,5 +1,4 @@
-﻿using AssetComponents.Models;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace AssetComponents.Components.Sabers
 {
@@ -10,7 +9,7 @@ namespace AssetComponents.Components.Sabers
         public Transform bottom;
         
         [Space]
-        public Material[] materials;
+        public Material material;
         
         [Space]
         [Range(0, 1), Tooltip("Duration of the furthest section of the trail in seconds")]

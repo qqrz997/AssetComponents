@@ -1,4 +1,5 @@
-﻿using AssetComponents.Models;
+﻿using AssetComponents.Editor;
+using AssetComponents.Models;
 using UnityEngine;
 
 #pragma warning disable CS0649
@@ -18,6 +19,11 @@ namespace AssetComponents.Components
         [Space]
         
         [SerializeField]
+        [ConditionalField(nameof(meshRenderer), typeof(DoesHaveMultipleMaterialsCondition))]
+        [Tooltip("Array index of the material from the Mesh Renderer should be colored")]
+        private int materialIndex;
+        
+        [SerializeField]
         [Tooltip("The name of the target color property of the material")]
         private string propertyName = "_Color";
         
@@ -33,7 +39,7 @@ namespace AssetComponents.Components
         [Tooltip("The color given to the property is always multiplied by the multiplier color; white has no effect")]
         private Color multiplierColor = Color.white;
 
-        public Material[] Materials => meshRenderer.sharedMaterials;
+        public Material Material => meshRenderer.sharedMaterials[materialIndex];
         public MaterialPropertyBlock MaterialPropertyBlock => materialPropertyBlock ??= new();
         
         public string PropertyName => propertyName;
@@ -45,6 +51,12 @@ namespace AssetComponents.Components
         {
             if (!meshRenderer) return;
             meshRenderer.SetPropertyBlock(MaterialPropertyBlock);
+        }
+        
+        private class DoesHaveMultipleMaterialsCondition : ConditionalFieldAttribute.ICondition
+        {
+            public bool GetState(object target) =>
+                target is MeshRenderer meshRenderer && meshRenderer && meshRenderer.sharedMaterials.Length > 1;
         }
     }
 }

@@ -2,9 +2,9 @@
 
 namespace AssetComponents.Models
 {
-    internal interface IColorer
+    public interface IColorer
     {
-        public Material[] Materials { get; }
+        public Material Material { get; }
         public MaterialPropertyBlock MaterialPropertyBlock { get; }
         
         public string PropertyName { get; }
