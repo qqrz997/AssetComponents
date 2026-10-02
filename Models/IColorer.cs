@@ -12,5 +12,10 @@ namespace AssetComponents.Models
         ColorSchemeType ColorSchemeType { get; }
         bool UseColorBoostEvents { get; }
         Color MultiplierColor { get; }
+
+        /// <summary>
+        /// Changes this instance's ColorSchemeType to that of the opposite hand
+        /// </summary>
+        void MirrorColorType();
     }
 }

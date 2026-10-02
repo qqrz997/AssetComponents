@@ -1,3 +1,4 @@
+using AssetComponents.Extensions;
 using AssetComponents.Models;
 using UnityEngine;
 
@@ -50,5 +51,10 @@ namespace AssetComponents.Components.Sabers
         public bool UseColorBoostEvents => useColorBoostEvents;
         public bool ApplyToVertexColor => applyToVertexColor;
         public Color MultiplierColor => multiplierColor;
+        
+        public void MirrorColorType()
+        {
+            colorSchemeType = ColorSchemeType.GetMirrored();
+        }
     }
 }

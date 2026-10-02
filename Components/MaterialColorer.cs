@@ -1,4 +1,5 @@
 ﻿using AssetComponents.Editor;
+using AssetComponents.Extensions;
 using AssetComponents.Models;
 using UnityEngine;
 
@@ -47,6 +48,11 @@ namespace AssetComponents.Components
         public bool UseColorBoostEvents => useColorBoostEvents;
         public Color MultiplierColor => multiplierColor;
         
+        public void MirrorColorType()
+        {
+            colorSchemeType = colorSchemeType.GetMirrored();
+        }
+
         public void UpdatePropertyBlock()
         {
             if (!meshRenderer) return;
