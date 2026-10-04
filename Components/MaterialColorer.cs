@@ -1,5 +1,4 @@
-﻿using AssetComponents.Editor;
-using AssetComponents.Extensions;
+﻿using AssetComponents.Extensions;
 using AssetComponents.Models;
 using UnityEngine;
 
@@ -9,12 +8,11 @@ namespace AssetComponents.Components
 {
     [AddComponentMenu("Beat Saber/AssetComponents/MaterialColorer")]
     [RequireComponent(typeof(MeshRenderer))]
-    public class MaterialColorer : MonoBehaviour, IColorer
+    public class MaterialColorer : MonoBehaviour, IBeatSaberColorer
     {
         private MaterialPropertyBlock materialPropertyBlock;
         
-        [SerializeField]
-        [Tooltip("The colorer will target the materials of this Mesh Renderer")]
+        [SerializeField, HideInInspector]
         private MeshRenderer meshRenderer;
         
         [Space]
@@ -39,24 +37,25 @@ namespace AssetComponents.Components
         [Tooltip("The color given to the property is always multiplied by the multiplier color; white has no effect")]
         private Color multiplierColor = Color.white;
 
-        public Material Material => meshRenderer.sharedMaterials[materialIndex];
-        public int MaterialIndex => materialIndex;
-        public MaterialPropertyBlock MaterialPropertyBlock => materialPropertyBlock ??= new();
-        
-        public string PropertyName => propertyName;
         public ColorSchemeType ColorSchemeType => colorSchemeType;
         public bool UseColorBoostEvents => useColorBoostEvents;
-        public Color MultiplierColor => multiplierColor;
-        
-        public void MirrorColorType()
+
+        private void Awake()
+        {
+            meshRenderer = GetComponent<MeshRenderer>();
+        }
+
+        public void MirrorColorSchemeType()
         {
             colorSchemeType = colorSchemeType.GetMirrored();
         }
 
-        public void UpdatePropertyBlock()
+        public void SetColor(Color color)
         {
             if (!meshRenderer) return;
-            meshRenderer.SetPropertyBlock(MaterialPropertyBlock, materialIndex);
+            materialPropertyBlock ??= new();
+            materialPropertyBlock.SetColor(propertyName, color * multiplierColor);
+            meshRenderer.SetPropertyBlock(materialPropertyBlock, materialIndex);
         }
     }
 }

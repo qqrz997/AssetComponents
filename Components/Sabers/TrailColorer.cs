@@ -8,7 +8,7 @@ namespace AssetComponents.Components.Sabers
 {
     [AddComponentMenu("Beat Saber/AssetComponents/TrailColorer")]
     [RequireComponent(typeof(CustomTrail))]
-    public class TrailColorer : MonoBehaviour, IColorer
+    public class TrailColorer : MonoBehaviour, IBeatSaberColorer
     { 
         private MaterialPropertyBlock materialPropertyBlock;
         
@@ -52,7 +52,7 @@ namespace AssetComponents.Components.Sabers
         public bool ApplyToVertexColor => applyToVertexColor;
         public Color MultiplierColor => multiplierColor;
         
-        public void MirrorColorType()
+        public void MirrorColorSchemeType()
         {
             colorSchemeType = ColorSchemeType.GetMirrored();
         }
