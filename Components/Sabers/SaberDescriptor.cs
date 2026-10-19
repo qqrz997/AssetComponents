@@ -14,7 +14,7 @@ namespace AssetComponents.Components.Sabers
         
         public GameObject leftSaber;
         
-        [PropertyLabel("Right Saber (Optional)")]
+        [OptionalProperty]
         public GameObject rightSaber;
     }
 }

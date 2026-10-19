@@ -11,13 +11,21 @@ namespace AssetComponents.Components.Notes
         public Texture2D icon;
         
         [Space]
-        public NoteSet leftNotes;
-        [PropertyLabel("Right Notes (Optional)")]
-        public NoteSet rightNotes;
-        [PropertyLabel("Bomb (Optional)")]
-        public GameObject bomb;
         
-        [Space]
-        public bool disableBaseNoteArrows;
+        [Header("Left Notes")]
+        public GameObject leftNoteArrow;
+        [OptionalProperty] public GameObject leftNoteDot;
+        [OptionalProperty] public GameObject leftChainArrow;
+        [OptionalProperty] public GameObject leftChainDot;
+        [OptionalProperty] public GameObject leftChainSegment;
+        
+        [Header("Right Notes")]
+        [OptionalProperty] public GameObject rightNoteArrow;
+        [OptionalProperty] public GameObject rightNoteDot;
+        [OptionalProperty] public GameObject rightChainArrow;
+        [OptionalProperty] public GameObject rightChainDot;
+        [OptionalProperty] public GameObject rightChainSegment;
+        
+        [OptionalProperty] public GameObject bomb;
     }
 }
